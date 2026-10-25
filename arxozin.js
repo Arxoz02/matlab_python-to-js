@@ -4,7 +4,13 @@ const arx = {
         Array.from({length: pasos}, (_, i) => 
             inicio + (fin - inicio) * i / (pasos - 1)),
 
-    shape: (matrix) => [matrix.length, matrix[0].length],
+    shape(array) {
+        if (array.length !== 0 && array[0].length == undefined) {
+            return [1, array.length]
+        } else {
+            return [array.length, array[0].length]
+        }
+    },
 
     mean(datos) {
         let promedio = 0;
@@ -27,3 +33,4 @@ const arx = {
         return [X, Y];
     }
 };
+arx.size = arx.shape;
