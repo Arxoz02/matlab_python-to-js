@@ -1,4 +1,4 @@
-const arxozin = {
+const arx = {
 
     linspace: (inicio, fin, pasos=1000) => 
         Array.from({length: pasos}, (_, i) => 
