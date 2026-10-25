@@ -28,7 +28,7 @@ const arx = {
             X.push(x);
         }
         for (let j = 0; j < y.length; j++) {
-            Y.push(Array(x.length).fill(y[j]);
+            Y.push(Array(x.length).fill(y[j]));
         }
         return [X, Y];
     }
