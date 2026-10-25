@@ -1,7 +1,5 @@
 # matlab_python-to-js
-Adding some MATLAB and Python Libs features to JavaScript
-# matlab_python-to-js
-Adding some MATLAB and Python features to JavaScript
+$$ Adding some MATLAB and Python Libs features to JavaScript
 
 Actual features:
 - linspace(start,end,n)
