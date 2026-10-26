@@ -5,7 +5,7 @@ const arx = {
             inicio + (fin - inicio) * i / (cantidad - 1)),
 
     arange(inicio, fin, intervalo) {
-        const array
+        const array = [];
         for (let i = inicio; i < fin; i += dt) {
             array.push(i);
         };
