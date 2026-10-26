@@ -1,9 +1,17 @@
 const arx = {
 
-    linspace: (inicio, fin, pasos=1000) => 
-        Array.from({length: pasos}, (_, i) => 
-            inicio + (fin - inicio) * i / (pasos - 1)),
+    linspace: (inicio, fin, cantidad=1000) => 
+        Array.from({length: cantidad}, (_, i) => 
+            inicio + (fin - inicio) * i / (cantidad - 1)),
 
+    arange(inicio, fin, intervalo) {
+        const array
+        for (let i = inicio; i < fin; i += dt) {
+            array.push(i);
+        };
+        return array;
+    },
+    
     shape(array) {
         if (array.length !== 0 && array[0].length == undefined) {
             return [1, array.length]
