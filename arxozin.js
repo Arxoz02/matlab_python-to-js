@@ -96,6 +96,28 @@ const arx = {
                 console.log("Sizes don't match.")
                 return;
         }
+    },
+    
+    transpose(matrix) {
+        const m = arx.shape(matrix);
+        let M = arx.zeros(m[1],m[0]);
+        if (m[0] == 1) {
+            for (let i = 0; i < m[1]; i++) {
+                M[i][0] = matrix[i];
+            }
+        } else if (m[1] == 1) {
+            for (let i=0; i < m[0]; i++) {
+                M[i] = matrix[i][0];
+            }
+        } else {
+            for (let i=0; i < m[0]; i++) {
+                for (let j=0; j < m[1]; j++) {
+                    M[j][i] = matrix[i][j];
+                }
+            }
+        }
+        return M;
     }
+    
 };
 arx.size = arx.shape;
