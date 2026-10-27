@@ -4,5 +4,6 @@ const tan = (x) => Math.tan(x); const atan = (x) => Math.atan(x);
 const sec = (x) => 1/Math.cos(x);
 const csc = (x) => 1/Math.sin(x);
 const ctn = (x) => 1/Math.tan(x);
-const Ln = (x) => Math.log(x);
+const ln = (x) => Math.log(x);
 const pi = Math.PI;
+const exp = x => Math.exp(x);
