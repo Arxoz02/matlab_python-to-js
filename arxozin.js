@@ -39,6 +39,63 @@ const arx = {
             Y.push(Array(x.length).fill(y[j]));
         }
         return [X, Y];
+    },
+    
+    zeros(filas, columnas) {
+        const array = [];
+        for (let i = 0; i < filas; i++){
+            array.push(Array(columnas).fill(0))
+        }
+        return array;
+    },
+    
+    ones(filas, columnas) {
+        const array = [];
+        for (let i = 0; i < filas; i++){
+            array.push(Array(columnas).fill(0))
+        }
+        return array;
+    },
+    
+    eye(n) {
+        let m = arx.zeros(n,n)
+        for (let i = 0; i<n; i++) {
+            m[i][i] = 1;
+        };
+        return m;
+    },
+    
+    dot(A,B) {
+        const a = arx.shape(A);
+        const b = arx.shape(B);
+        const C = arx.zeros(a[0],b[1]);
+        if (a[1] == b[0]) {
+            if (b[1] == 1) {
+                for (let i = 0; i < a[0]; i++) {
+                    for (let j = 0; j < b[1]; j++) {
+                        C[i][j] += A[i][j]*B[j];
+                    }
+                }
+            } else if (a[0] == 1) {
+                for (let i = 0; i < a[0]; i++) {
+                        for (let j = 0; j < b[1]; j++) {
+                            C[i][j] += A[i]*B[i][j];
+                        }
+                    }
+                } else {
+                    for (let i = 0; i < a[0]; i++) {
+                        for (let j = 0; j < b[1]; j++) {
+                            for (let k = 0; k < a[1]; k++) {
+                                C[i][k] += A[i][j]*B[j][k];
+                            }
+                        }
+                    }
+                }
+                return C;
+            }  else {
+                console.log("Sizes don't match.")
+                return;
+        }
     }
 };
 arx.size = arx.shape;
