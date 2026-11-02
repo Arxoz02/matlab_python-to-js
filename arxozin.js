@@ -6,17 +6,18 @@ const arx = {
 
     arange(inicio, fin, intervalo) {
         const array = [];
-        for (let i = inicio; i < fin; i += dt) {
+        for (let i = inicio; i < fin; i += intervalo) {
             array.push(i);
         };
         return array;
     },
     
     shape(array) {
-        if (array.length !== 0 && array[0].length == undefined) {
-            return [1, array.length]
+        if (array.length === 0) { return [0,0]; }
+        if (array[0].length == undefined) {
+            return [1, array.length];
         } else {
-            return [array.length, array[0].length]
+            return [array.length, array[0].length];
         }
     },
 
@@ -52,7 +53,7 @@ const arx = {
     ones(filas, columnas) {
         const array = [];
         for (let i = 0; i < filas; i++){
-            array.push(Array(columnas).fill(0))
+            array.push(Array(columnas).fill(1))
         }
         return array;
     },
@@ -86,7 +87,7 @@ const arx = {
                     for (let i = 0; i < a[0]; i++) {
                         for (let j = 0; j < b[1]; j++) {
                             for (let k = 0; k < a[1]; k++) {
-                                C[i][k] += A[i][j]*B[j][k];
+                                C[i][j] += A[i][k]*B[k][j];
                             }
                         }
                     }
@@ -107,7 +108,7 @@ const arx = {
             }
         } else if (m[1] == 1) {
             for (let i=0; i < m[0]; i++) {
-                M[i] = matrix[i][0];
+                M[0][i] = matrix[i][0];
             }
         } else {
             for (let i=0; i < m[0]; i++) {
