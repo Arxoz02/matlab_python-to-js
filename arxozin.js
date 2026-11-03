@@ -109,7 +109,8 @@ const arx = {
         } else if (m[1] == 1) {
             for (let i=0; i < m[0]; i++) {
                 M[0][i] = matrix[i][0];
-            }
+            };
+            M = M.flat();
         } else {
             for (let i=0; i < m[0]; i++) {
                 for (let j=0; j < m[1]; j++) {
